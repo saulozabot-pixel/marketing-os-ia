@@ -1,13 +1,6 @@
-@import "tailwindcss";
-
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-
-  --color-brand-primary: #6366f1;
-  --color-brand-secondary: #a855f7;
-  --color-brand-accent: #ec4899;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #050505;
@@ -35,9 +28,6 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Glassmorphism Utilities */
@@ -65,10 +55,16 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
 }
+
+/* Icons Colors */
+.text-brand-primary { color: #6366f1; }
+.bg-brand-primary { background-color: #6366f1; }
+.text-brand-secondary { color: #a855f7; }
+.bg-brand-secondary { background-color: #a855f7; }
+.text-brand-accent { color: #ec4899; }
+.bg-brand-accent { background-color: #ec4899; }
 
 /* Animations */
 @keyframes float {
