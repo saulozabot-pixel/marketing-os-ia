@@ -1,65 +1,88 @@
-import Image from "next/image";
+import { 
+  Search, 
+  PenTool, 
+  FileCode, 
+  BarChart3, 
+  Youtube,
+  Share2,
+  Sparkles
+} from "lucide-react";
+import { DashboardCard } from "@/components/DashboardCard";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="space-y-10 animate-in fade-in duration-500">
+      <header className="space-y-2">
+        <div className="flex items-center gap-2 text-brand-primary mb-2">
+          <Sparkles className="w-5 h-5 fill-brand-primary" />
+          <span className="font-outfit font-semibold uppercase tracking-wider text-xs">
+            Bem-vindo ao Futuro do Marketing
+          </span>
+        </div>
+        <h1 className="text-5xl font-outfit font-bold tracking-tight">
+          O que vamos <span className="text-gradient">criar hoje?</span>
+        </h1>
+        <p className="text-muted-foreground text-lg max-w-2xl">
+          Sua central de inteligência para decolar produtos, infoprodutos e canais no YouTube com o poder da IA.
+        </p>
+      </header>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <DashboardCard 
+          title="Pesquisa de Mercado"
+          description="Analise nichos lucrativos e espione a concorrência com inteligência artificial."
+          icon={Search}
+          color="bg-blue-500/20"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <DashboardCard 
+          title="Criativos & Copy"
+          description="Gere anúncios persuasivos e criativos que convertem em segundos."
+          icon={PenTool}
+          color="bg-purple-500/20"
+        />
+        <DashboardCard 
+          title="Roteiros para YouTube"
+          description="Crie roteiros virais e estratégias de conteúdo para crescer seu canal."
+          icon={Youtube}
+          color="bg-red-500/20"
+        />
+        <DashboardCard 
+          title="Páginas de Vendas"
+          description="Construa landing pages de alta conversão otimizadas para SEO."
+          icon={FileCode}
+          color="bg-emerald-500/20"
+        />
+        <DashboardCard 
+          title="Tráfego & Anúncios"
+          description="Estruture campanhas vencedoras e monitore seus pixels de rastreamento."
+          icon={BarChart3}
+          color="bg-orange-500/20"
+        />
+        <DashboardCard 
+          title="Redes Sociais"
+          description="Geração automatizada de conteúdo para escalonamento orgânico."
+          icon={Share2}
+          color="bg-pink-500/20"
+        />
+      </section>
+
+      <div className="glass-card p-8 rounded-3xl relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-brand-primary/20 transition-all duration-500" />
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-outfit font-bold">Inicie sua primeira campanha</h2>
+            <p className="text-muted-foreground max-w-lg">
+              Deixe que nossa IA "fodástica" analise seu produto e sugira a melhor estratégia de lançamento agora mesmo.
+            </p>
+            <button className="bg-gradient-to-r from-brand-primary to-brand-secondary px-8 py-3 rounded-xl font-bold text-white hover:shadow-lg hover:shadow-brand-primary/30 transition-all hover:-translate-y-1">
+              Começar Agora
+            </button>
+          </div>
+          <div className="w-full md:w-64 h-48 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center animate-float">
+             <Sparkles className="w-16 h-16 text-brand-primary opacity-50" />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
