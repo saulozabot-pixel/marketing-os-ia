@@ -34,7 +34,6 @@
     "typescript": "5.3.2"
   },
   "overrides": {
-    "zod": "3.23.8",
-    "zod-to-json-schema": "3.24.1"
+    "zod-to-json-schema": "3.23.5"
   }
 }
